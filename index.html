@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hacker Like Animate Text</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="dist/bundle.min.js"></script>
+	<style>
+	body {
+		font-family: monospace;
+		background: black;
+		color: green;
+		height: 100%;
+	}
+
+	.container {
+		max-width: 500px;
+		margin: auto;
+		padding: 16px;
+	}
+
+	.text {
+		word-break: break-all;
+		height: 200px;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="text-center">
+			<button onclick="encode()">ENCODE</button>
+			<button onclick="decode()">DECODE</button>
+		</div>
+		<h4 class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+	</div>
+</body>
+<script>
+	let original = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	let base64 = 'TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdCwgc2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWEuIFV0IGVuaW0gYWQgbWluaW0gdmVuaWFtLCBxdWlzIG5vc3RydWQgZXhlcmNpdGF0aW9uIHVsbGFtY28gbGFib3JpcyBuaXNpIHV0IGFsaXF1aXAgZXggZWEgY29tbW9kbyBjb25zZXF1YXQuIER1aXMgYXV0ZSBpcnVyZSBkb2xvciBpbiByZXByZWhlbmRlcml0IGluIHZvbHVwdGF0ZSB2ZWxpdCBlc3NlIGNpbGx1bSBkb2xvcmUgZXUgZnVnaWF0IG51bGxhIHBhcmlhdHVyLiBFeGNlcHRldXIgc2ludCBvY2NhZWNhdCBjdXBpZGF0YXQgbm9uIHByb2lkZW50LCBzdW50IGluIGN1bHBhIHF1aSBvZmZpY2lhIGRlc2VydW50IG1vbGxpdCBhbmltIGlkIGVzdCBsYWJvcnVtLg=='
+
+	let isEncoded = false
+	const encode = (e) => {
+		if(isEncoded) {
+			return 
+		}
+		isEncoded = true
+		const el = document.querySelector('.text')
+		animateText(el.textContent, base64, 50, 3000, function(transformText) {
+			el.textContent = transformText
+		})
+	}
+
+	const decode = () => {
+		if(!isEncoded) {
+			return 
+		}
+		isEncoded = false
+		const el = document.querySelector('.text')
+		animateText(el.textContent, original, 50, 3000, function(transformText) {
+			el.textContent = transformText
+		})
+	}
+</script>
+</html>

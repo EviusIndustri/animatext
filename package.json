@@ -1,0 +1,37 @@
+{
+  "name": "animate-text",
+  "version": "0.0.1",
+  "description": "Animate text change so that its look cool like some stuff on TV",
+  "module": "src/index.js",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "prebuild": "rm -r dist && mkdir dist",
+    "build:browser": "npx browserify src/index.js --s animateText -o dist/bundle.js -t [ babelify --presets [ @babel/preset-env ] ]",
+    "build:min": "npx uglifyjs dist/bundle.js -c > dist/bundle.min.js",
+    "build": "npm run prebuild && npm run build:browser && npm run build:min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EviusIndustri/animate-text.git"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "uglify-js": "^3.4.9"
+  },
+  "bugs": {
+    "url": "https://github.com/EviusIndustri/animate-text/issues"
+  },
+  "homepage": "https://github.com/EviusIndustri/animate-text#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.2.0"
+  }
+}
