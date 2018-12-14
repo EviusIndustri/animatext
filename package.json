@@ -1,5 +1,5 @@
 {
-  "name": "animate-text",
+  "name": "animatext",
   "version": "0.0.1",
   "description": "Animate text change so that its look cool like some stuff on TV",
   "module": "src/index.js",
@@ -10,13 +10,13 @@
   "scripts": {
     "prebuild": "rm -r dist && mkdir dist",
     "build:module": "npx babel src/index.js -o dist/index.js",
-    "build:browser": "npx browserify dist/index.js --s animateText -o dist/bundle.js",
-    "build:min": "npx uglifyjs dist/bundle.js -c > dist/bundle.min.js",
+    "build:browser": "npx browserify dist/index.js --s animatext -o dist/animatext.js",
+    "build:min": "npx uglifyjs dist/animatext.js -c > dist/animatext.min.js",
     "build": "npm run prebuild && npm run build:module && npm run build:browser && npm run build:min"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EviusIndustri/animate-text.git"
+    "url": "git+https://github.com/EviusIndustri/animatext.git"
   },
   "author": "",
   "license": "Unlicense",
@@ -35,9 +35,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/EviusIndustri/animate-text/issues"
+    "url": "https://github.com/EviusIndustri/animatext/issues"
   },
-  "homepage": "https://github.com/EviusIndustri/animate-text#readme",
+  "homepage": "https://github.com/EviusIndustri/animatext#readme",
   "dependencies": {
     "@babel/runtime": "^7.2.0"
   }

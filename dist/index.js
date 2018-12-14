@@ -20,7 +20,7 @@ var _toAscii = function _toAscii(char) {
   return char ? char.charCodeAt(0) : null;
 };
 
-var animateText = function animateText(text, newText) {
+var animatext = function animatext(text, newText) {
   var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 50;
   var duration = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 3000;
   var cb = arguments.length > 4 ? arguments[4] : undefined;
@@ -82,13 +82,19 @@ var animateText = function animateText(text, newText) {
         }
       }
     });
-    cb(splittedText.join(''));
-    currentStep++;
+    var result = {
+      text: splittedText.join(''),
+      done: false
+    };
 
     if (splittedText.join('') === newText) {
       clearInterval(myInterval);
+      result.done = true;
     }
+
+    currentStep++;
+    cb(result);
   }, interval);
 };
 
-module.exports = animateText;
+module.exports = animatext;

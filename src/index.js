@@ -17,7 +17,7 @@ const _toAscii = (char) => {
   return char ? char.charCodeAt(0) : null
 }
 
-const animateText = (text, newText, interval = 50, duration = 3000, cb) => {
+const animatext = (text, newText, interval = 50, duration = 3000, cb) => {
   let stepLengthReminder = 0
 
   const stepList = []
@@ -78,12 +78,19 @@ const animateText = (text, newText, interval = 50, duration = 3000, cb) => {
       }
     })
 
-		cb(splittedText.join(''))
-    currentStep++
-    if(splittedText.join('') === newText) {
-			clearInterval(myInterval)
+    let result = {
+      text: splittedText.join(''),
+      done: false
     }
+
+    if(splittedText.join('') === newText) {
+      clearInterval(myInterval)
+      result.done = true
+    }
+
+    currentStep++
+    cb(result)
   }, interval)
 }
 
-module.exports = animateText
+module.exports = animatext
