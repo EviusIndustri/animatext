@@ -2,9 +2,9 @@
 ![](https://media.giphy.com/media/k579ZxQrVX54BkOqvD/giphy.gif)
 
 ## Usage
+
 1. Get the javascript file [here](https://github.com/EviusIndustri/animatext/blob/master/dist/bundle.min.js) and include it in your html file 
 `<script src="js/animatext.min.js"></script>`
-<br/>
 2. Use `animatext` function to animate text change
 Example:
     ```
@@ -26,7 +26,6 @@ Example:
     3. Third parameter is the interval change for the characters from original text to     target text (`number`)
     4. Fourth parameter is the duration of text transformation (`number`)
     5. Fifth parameter used for callback in each interval (`function`)
-<br/>
 3. Callback can be used to trigger state change or dom manipulation
 
 ## About
