@@ -3,8 +3,10 @@
 
 ## Usage
 
-1. Get the javascript file [here](https://github.com/EviusIndustri/animatext/blob/master/dist/animatext.min.js) and include it in your html file 
-`<script src="js/animatext.min.js"></script>`
+1. Get the javascript file [here](https://github.com/EviusIndustri/animatext/blob/master/dist/animatext.min.js) and include it in your html file  <br>
+    `<script src="js/animatext.min.js"></script>` <br>
+    or use our cdn <br>
+    `<script src="https://evius.id/js/animatext.min.js"></script>`
 2. Use `animatext` function to animate text change<br/>Example:
     ```
     let original = 'abc'
